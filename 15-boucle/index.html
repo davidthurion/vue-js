@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="(ingredient, index) in ingredients" :key="ingredient">({{index}}) {{ ingredient }}</li>
+		</ul>
+		<button @click="ingredients.push('spices')">add new</button>
+		<hr>
+		<ul>
+			<li v-for="person in persons">{{person.name}}</li>
+			<li v-for="person in persons">
+				<div v-for="(value, key) in person">{{value}} - {{key}}</div>
+			</li>
+		</ul>
+		<span v-for="n in 10">{{n}}</span>
+		<hr>
+		<template v-for="(ingredient, index) in ingredients">
+			<h1>{{ ingredient }}</h1>
+			<p>{{index}}</p>
+		</template>
+	</div>
+	<script src="app.js"></script>
+</body>
+
+</html>
